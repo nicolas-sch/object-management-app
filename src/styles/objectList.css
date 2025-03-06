@@ -1,0 +1,104 @@
+.object-list {
+  background-color: white;
+  padding: 30px;
+  border-radius: 12px;
+  box-shadow: 0 6px 12px rgba(0, 0, 0, 0.1);
+  max-width: 600px;
+  width: 100%;
+  margin: 0 auto;
+  text-align: center;
+}
+
+.object-list h2 {
+  color: #ff4d4d;
+  font-size: 1.8rem;
+  margin-bottom: 20px;
+}
+
+.object-table-wrapper {
+  width: 100%;
+  overflow-x: auto;
+}
+
+.object-table {
+  width: 100%;
+  border-collapse: collapse;
+  margin-top: 15px;
+  background-color: white;
+  border-radius: 10px;
+  min-width: 600px; /* Define a largura mínima para a tabela */
+}
+
+.object-table thead {
+  background-color: #ff4d4d;
+  color: white;
+}
+
+.object-table th {
+  padding: 12px;
+  font-size: 1rem;
+  text-align: left;
+}
+
+.object-table td {
+  padding: 12px;
+  border-bottom: 1px solid #eee;
+  text-align: left;
+}
+
+.object-table tr:last-child td {
+  border-bottom: none;
+}
+
+.object-table tbody tr:hover {
+  background-color: #ffebeb;
+}
+
+.object-list button {
+  padding: 8px 12px;
+  background-color: #ff4d4d;
+  color: white;
+  border: none;
+  border-radius: 6px;
+  cursor: pointer;
+  transition: background-color 0.3s ease;
+}
+
+.object-list button:hover {
+  background-color: #cc0000;
+}
+
+@media (max-width: 768px) {
+  .object-list {
+    padding: 20px;
+  }
+
+  .object-table th, .object-table td {
+    font-size: 1rem;
+    padding: 10px;
+  }
+
+  .object-list h2 {
+    font-size: 1.5rem;
+  }
+}
+
+@media (max-width: 480px) {
+  .object-list {
+    padding: 15px;
+  }
+
+  .object-table th, .object-table td {
+    font-size: 0.9rem;
+    padding: 8px;
+  }
+
+  .object-list h2 {
+    font-size: 1.3rem;
+  }
+
+  .object-list button {
+    padding: 6px 10px;
+    font-size: 0.9rem;
+  }
+}
