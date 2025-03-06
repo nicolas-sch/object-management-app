@@ -5,7 +5,10 @@ import Modal from "./Modal";
 import "../styles/objectForm.css";
 
 const ObjectForm = ({ object }: { object?: any }) => {
+  // Accessing the dispatch function from the AppContext
   const { dispatch } = useContext(AppContext);
+
+  // State to manage form data (name, description, type)
   const [formData, setFormData] = useState({
     name: object?.name || "",
     description: object?.description || "",
@@ -14,14 +17,20 @@ const ObjectForm = ({ object }: { object?: any }) => {
   const [isModalOpen, setIsModalOpen] = useState(false);
   const [feedbackMessage, setFeedbackMessage] = useState("");
 
+  // Handler for input field changes to update formData
   const handleChange = (e: React.ChangeEvent<HTMLInputElement>) => {
     setFormData({ ...formData, [e.target.name]: e.target.value });
   };
 
+  // Handler for form submission
   const handleSubmit = (e: React.FormEvent) => {
     e.preventDefault();
 
-    if (!formData.name.trim() || !formData.description.trim() || !formData.type.trim()) {
+    if (
+      !formData.name.trim() ||
+      !formData.description.trim() ||
+      !formData.type.trim()
+    ) {
       setFeedbackMessage("All fields are required.");
       setIsModalOpen(true);
       return;
